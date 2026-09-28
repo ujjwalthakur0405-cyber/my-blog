@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ujjwal's Journal | Tech & Student Life</title>
+
+    <style>
+
+        /* =========================
+           GENERAL
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f6f3ee;
+            color: #292929;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+
+        header {
+            background: #17212b;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+        }
+
+        nav {
+            max-width: 1150px;
+            margin: auto;
+            padding: 18px 25px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #f4a261;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #f4a261;
+        }
+
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            background:
+                linear-gradient(135deg, #17212b, #263b4a);
+
+            color: white;
+            min-height: 540px;
+
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 1150px;
+            width: 100%;
+            margin: auto;
+            padding: 70px 25px;
+
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #f4a261;
+            color: #17212b;
+            padding: 7px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-family: Georgia, serif;
+            font-size: 55px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #f4a261;
+        }
+
+        .hero p {
+            color: #d8e0e5;
+            font-size: 18px;
+            max-width: 620px;
+            margin-bottom: 30px;
+        }
+
+        .hero-button {
+            display: inline-block;
+            background: #f4a261;
+            color: #17212b;
+            padding: 13px 23px;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .hero-button:hover {
+            background: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        .hero-card {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .hero-card h3 {
+            color: #f4a261;
+            margin-bottom: 15px;
+        }
+
+        .hero-card p {
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+
+
+        /* =========================
+           COMMON SECTION
+        ========================== */
+
+        .section {
+            max-width: 1150px;
+            margin: auto;
+            padding: 80px 25px;
+        }
+
+        .section-heading {
+            margin-bottom: 40px;
+        }
+
+        .section-heading small {
+            color: #e76f51;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-heading h2 {
+            font-family: Georgia, serif;
+            font-size: 38px;
+            margin-top: 8px;
+        }
+
+        .section-heading p {
+            color: #777;
+            margin-top: 8px;
+        }
+
+
+        /* =========================
+           FEATURED BLOG
+        ========================== */
+
+        .featured {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+        }
+
+        .featured-image {
+            min-height: 330px;
+
+            background:
+                linear-gradient(135deg, #264653, #2a9d8f);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+            font-size: 70px;
+        }
+
+        .featured-content {
+            padding: 45px;
+        }
+
+        .category {
+            display: inline-block;
+            color: #e76f51;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .featured-content h3 {
+            font-family: Georgia, serif;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .featured-content p {
+            color: #666;
+            margin-bottom: 18px;
+        }
+
+        .meta {
+            color: #999;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        .read-button {
+            color: #e76f51;
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           BLOG CARDS
+        ========================== */
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+
+            box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+
+            transition: 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+
+        .blog-top {
+            height: 150px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 48px;
+            color: white;
+        }
+
+        .blog-one {
+            background: #457b9d;
+        }
+
+        .blog-two {
+            background: #e76f51;
+        }
+
+        .blog-three {
+            background: #6a994e;
+        }
+
+        .blog-content {
+            padding: 25px;
+        }
+
+        .blog-content h3 {
+            font-family: Georgia, serif;
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .blog-content p {
+            color: #6d6d6d;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+
+        /* =========================
+           STUDENT STORY
+        ========================== */
+
+        .story {
+            background: #17212b;
+            color: white;
+        }
+
+        .story .section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .story h2 {
+            font-family: Georgia, serif;
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .story p {
+            color: #cbd4d9;
+            margin-bottom: 15px;
+        }
+
+        .quote {
+            border-left: 4px solid #f4a261;
+            padding-left: 25px;
+            font-family: Georgia, serif;
+            font-size: 22px;
+            color: white;
+        }
+
+
+        /* =========================
+           TOPICS
+        ========================== */
+
+        .topics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .topic {
+            background: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            border: 1px solid #ddd;
+            color: #444;
+            transition: 0.3s;
+        }
+
+        .topic:hover {
+            background: #17212b;
+            color: white;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact-box {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 750px;
+            margin: auto;
+
+            box-shadow: 0 7px 22px rgba(0,0,0,0.07);
+        }
+
+        .contact-box h2 {
+            font-family: Georgia, serif;
+            margin-bottom: 10px;
+        }
+
+        .contact-box p {
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+
+            border: 1px solid #ddd;
+            border-radius: 6px;
+
+            font-family: Arial;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        .submit-btn {
+            background: #e76f51;
+            color: white;
+
+            border: none;
+            padding: 13px 25px;
+
+            border-radius: 6px;
+            cursor: pointer;
+
+            font-weight: bold;
+        }
+
+        .submit-btn:hover {
+            background: #c9573c;
+        }
+
+        #formMessage {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background: #111a21;
+            color: #aeb8be;
+            padding: 35px 20px;
+            text-align: center;
+        }
+
+        footer h3 {
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        footer span {
+            color: #f4a261;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 800px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .featured {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .story .section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+                Ujjwal Blog<span>.</span>
+            </div>
+
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#blogs">Blogs</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#topics">Topics</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div>
+
+                <span class="tag">
+                    STUDENT • DEVELOPER • LEARNER
+                </span>
+
+                <h1>
+                    Learning things,<br>
+                    <span>one project at a time.</span>
+                </h1>
+
+                <p>
+                    I'm Thakur Ujjwal, a CSE student interested in
+                    programming, Artificial Intelligence and building
+                    things on the web. This is my little corner of
+                    the internet where I write about what I'm learning,
+                    what confuses me, and what I discover along the way.
+                </p>
+
+                <a href="#blogs" class="hero-button">
+                    Explore My Blog →
+                </a>
+
+            </div>
+
+
+            <div class="hero-card">
+
+                <h3>Currently Learning</h3>
+
+                <p>▸ C Programming & Data Structures</p>
+
+                <p>▸ Java & Object-Oriented Programming</p>
+
+                <p>▸ HTML, CSS & JavaScript</p>
+
+                <p>▸ Database Management Systems</p>
+
+                <p>▸ AI & Machine Learning Fundamentals</p>
+
+                <p>▸ Problem Solving & DSA</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FEATURED BLOG
+    ========================== -->
+
+    <section class="section" id="blogs">
+
+        <div class="section-heading">
+
+            <small>Featured Post</small>
+
+            <h2>From "I Don't Know" to "Let Me Try"</h2>
+
+            <p>
+                A few thoughts from my journey of learning programming.
+            </p>
+
+        </div>
+
+
+        <div class="featured">
+
+            <div class="featured-image">
+                &lt;/&gt;
+            </div>
+
+
+            <div class="featured-content">
+
+                <span class="category">
+                    Student Life
+                </span>
+
+                <h3>
+                    Learning Programming When Everything Looks Difficult
+                </h3>
+
+                <div class="meta">
+                    By Thakur Ujjwal • September 2026 • 5 min read
+                </div>
+
+                <p>
+                    When I started learning programming, even small
+                    programs could feel unnecessarily complicated.
+                    Sometimes the problem wasn't the code itself.
+                    I simply didn't understand why each line was there.
+                </p>
+
+                <p>
+                    Over time I realised that copying a solution is
+                    very different from understanding it. Whether it
+                    is a simple C program, a Java class, or a data
+                    structure, asking "why?" has helped me much more
+                    than trying to memorise everything.
+                </p>
+
+                <p>
+                    I still get stuck. The difference now is that
+                    getting stuck doesn't automatically mean I can't
+                    do it. Usually it just means there is something
+                    I haven't understood yet.
+                </p>
+
+                <a href="#more1" class="read-button">
+                    Continue Reading →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BLOG POSTS
+    ========================== -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <small>Latest Posts</small>
+
+            <h2>Things I'm Thinking About</h2>
+
+            <p>
+                Not everything here is a tutorial. Sometimes it's
+                simply something worth thinking about.
+            </p>
+
+        </div>
+
+
+        <div class="blog-grid">
+
+
+            <!-- BLOG 1 -->
+
+            <div class="blog-card">
+
+                <div class="blog-top blog-one">
+                    { }
+                </div>
+
+                <div class="blog-content">
+
+                    <span class="category">
+                        Programming
+                    </span>
+
+                    <h3>
+                        Why DSA Feels Difficult at First
+                    </h3>
+
+                    <div class="meta">
+                        September 2026 • 4 min read
+                    </div>
+
+                    <p>
+                        Arrays, linked lists, stacks, queues and
+                        searching algorithms can look like a long
+                        list of topics. But once the basic idea clicks,
+                        they start feeling much less mysterious.
+                    </p>
+
+                    <a href="#more2" class="read-button">
+                        Read Post →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- BLOG 2 -->
+
+            <div class="blog-card">
+
+                <div class="blog-top blog-two">
+                    AI
+                </div>
+
+                <div class="blog-content">
+
+                    <span class="category">
+                        AI & ML
+                    </span>
+
+                    <h3>
+                        Studying AI Without Rushing Into the Hype
+                    </h3>
+
+                    <div class="meta">
+                        September 2026 • 5 min read
+                    </div>
+
+                    <p>
+                        AI is everywhere, but knowing the buzzwords
+                        isn't the same as understanding AI. I think
+                        starting with programming, mathematics and
+                        problem solving makes the journey much more
+                        meaningful.
+                    </p>
+
+                    <a href="#more3" class="read-button">
+                        Read Post →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- BLOG 3 -->
+
+            <div class="blog-card">
+
+                <div class="blog-top blog-three">
+                    &lt; / &gt;
+                </div>
+
+                <div class="blog-content">
+
+                    <span class="category">
+                        Web Development
+                    </span>
+
+                    <h3>
+                        My First Steps Into Building Websites
+                    </h3>
+
+                    <div class="meta">
+                        September 2026 • 3 min read
+                    </div>
+
+                    <p>
+                        HTML looked simple at first. Then CSS showed
+                        up. Then JavaScript. Building even a small
+                        website taught me that understanding the basics
+                        is more useful than trying to build everything
+                        at once.
+                    </p>
+
+                    <a href="#more4" class="read-button">
+                        Read Post →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         LONGER BLOG CONTENT
+    ========================== -->
+
+    <section class="section" id="more1">
+
+        <div class="section-heading">
+
+            <small>My Notes</small>
+
+            <h2>A Little More About My Learning</h2>
+
+        </div>
+
+        <div class="about">
+
+            <p>
+                College has introduced me to a lot of different
+                subjects. Sometimes it feels like there are too many
+                things to learn at the same time. C, Java, DBMS,
+                mathematics, web development, data structures and
+                AI-related subjects can easily become a long checklist.
+            </p>
+
+            <br>
+
+            <p>
+                I've started to understand that I don't need to become
+                an expert in everything immediately. A better approach
+                is to take one concept, understand it properly, write
+                some code, make mistakes and then try again.
+            </p>
+
+            <br>
+
+            <p>
+                That's also why I wanted this website to be more than
+                a collection of copied articles. These posts are
+                supposed to represent the things I am actually
+                learning and thinking about as a student.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         STUDENT STORY
+    ========================== -->
+
+    <section class="story">
+
+        <div class="section">
+
+            <div>
+
+                <small style="color:#f4a261;">
+                    MY APPROACH
+                </small>
+
+                <h2>
+                    Don't just learn it.<br>
+                    Try building it.
+                </h2>
+
+                <p>
+                    One thing I've noticed while studying technology
+                    is that concepts become much easier after actually
+                    using them.
+                </p>
+
+                <p>
+                    A stack becomes easier when you implement one.
+                    HTML becomes easier when you create a page.
+                    Java becomes easier when you write a program.
+                    And web development becomes much more interesting
+                    when the website is actually yours.
+                </p>
+
+            </div>
+
+
+            <div class="quote">
+
+                "The goal isn't to know everything.
+                The goal is to keep becoming better than
+                the version of yourself who started."
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TOPICS
+    ========================== -->
+
+    <section class="section" id="topics">
+
+        <div class="section-heading">
+
+            <small>Categories</small>
+
+            <h2>What You'll Find Here</h2>
+
+            <p>
+                Topics I am interested in and learning about.
+            </p>
+
+        </div>
+
+
+        <div class="topics">
+
+            <span class="topic">C Programming</span>
+
+            <span class="topic">Java</span>
+
+            <span class="topic">Data Structures</span>
+
+            <span class="topic">DSA</span>
+
+            <span class="topic">Artificial Intelligence</span>
+
+            <span class="topic">Machine Learning</span>
+
+            <span class="topic">Web Development</span>
+
+            <span class="topic">DBMS</span>
+
+            <span class="topic">College Life</span>
+
+            <span class="topic">Student Projects</span>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section class="section" id="contact">
+
+        <div class="contact-box">
+
+            <h2>
+                Have something to say?
+            </h2>
+
+            <p>
+                Send me a message. 
+            </p>
+
+
+            <form id="contactForm">
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Your Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your name"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="userMessage">
+                        Message
+                    </label>
+
+                    <textarea
+                        id="userMessage"
+                        placeholder="Write your message..."
+                    ></textarea>
+
+                </div>
+
+
+                <button type="submit" class="submit-btn">
+                    Send Message
+                </button>
+
+                <p id="formMessage"></p>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <h3>
+            Ujjwal<span>.</span>
+        </h3>
+
+        <p>
+            A student learning, building and documenting the journey.
+        </p>
+
+        <br>
+
+        <p>
+            © 2026 Thakur Ujjwal | Web Application Project
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        document
+            .getElementById("contactForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                let name =
+                    document.getElementById("name").value.trim();
+
+                let email =
+                    document.getElementById("email").value.trim();
+
+                let userMessage =
+                    document.getElementById("userMessage").value.trim();
+
+                let result =
+                    document.getElementById("formMessage");
+
+
+                if (name === "" || email === "" || userMessage === "") {
+
+                    result.innerHTML =
+                        "Please fill in all the fields.";
+
+                    result.style.color = "#d62828";
+
+                }
+
+                else {
+
+                    result.innerHTML =
+                        "Thanks, " + name +
+                        "! Your message has been received.";
+
+                    result.style.color = "#2a9d8f";
+
+                    document
+                        .getElementById("contactForm")
+                        .reset();
+                }
+
+            });
+
+    </script>
+
+
+</body>
+
+</html>
